@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Python Projects</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="project">
+        <h2>CALCULATOR</h2>
+        <div class="project-details">
+            <div class="project-images">
+                <img src="Calculator1.jpg" alt="Python Project Image 1">
+                <img src="Calculator2.jpg" alt="Python Project Image 2">
+                <img src="Calculator3.jpg" alt="Python Project Image 3">
+            </div>
+            <div class="code">
+                <pre>
+                    <code>
+                        # INICIA ALGORITMO QUE CREA UNA CALCULADORA CON TKINTER #    #    0    Tabulador al inicio
+# INICIA LA PRIMERA PARTE DE TRES DEL PROGRAMA DE LA CALCULADORA CON TKINTER #    #    0    Tabulador al inicio
+from tkinter import Tk, Label, Button, StringVar    #    0    Tabulador al inicio
+import winsound    #    0    Tabulador al inicio
+cantidad = str()    #    0    Tabulador al inicio
+operacion = str()    #    0    Tabulador al inicio
+num = float()    #    0    Tabulador al inicio
+num1 = float()    #    0    Tabulador al inicio
+num2 = float()    #    0    Tabulador al inicio
+punto = bool()    #    0    Tabulador al inicio
+operacion = "NO_OPERACION"    #    0    Tabulador al inicio
+num1 = 0    #    0    Tabulador al inicio
+num2 = 0    #    0    Tabulador al inicio
+punto = False
+filas = 7    #    0    Tabulador al inicio
+columnas = 4    #    0    Tabulador al inicio
+def numero_presionado(num):    #    0    Tabulador al inicio
+    global cantidad, num1, num2, operacion    #    1    Tabulador al inicio
+    cantidad = cantidad + num    #    1    Tabulador al inicio
+    if cantidad == ".":    #    1    Tabulador al inicio
+        cantidad = "0."    #    2    Tabulador al inicio
+    variable_control.set(cantidad)    #    1    Tabulador al inicio
+    if operacion == "NO_OPERACION":    #    1    Tabulador al inicio
+        num1 = float(cantidad)    #    2    Tabulador al inicio
+    else:    #    1    Tabulador al inicio
+        num2 =float(cantidad)    #    2    Tabulador al inicio
+def start_borrar():    #    0    Tabulador al inicio
+    global cantidad, num, num1, num2, operacion, punto    #    1    Tabulador al inicio
+    num1 = 0    #    1    Tabulador al inicio
+    num2 = 0    #    1    Tabulador al inicio
+    num = 0    #    1    Tabulador al inicio
+    variable_control.set("0")    #    1    Tabulador al inicio
+    operacion = "NO_OPERACION"    #    1    Tabulador al inicio
+    cantidad = ""    #    1    Tabulador al inicio
+    punto = False    #    1    Tabulador al inicio
+def start_entre():    #    0    Tabulador al inicio
+    global operacion, cantidad, punto    #    1    Tabulador al inicio
+    operacion = "DIVISION"    #    1    Tabulador al inicio
+    cantidad = ""    #    1    Tabulador al inicio
+    punto = False    #    1    Tabulador al inicio
+def start_siete():    #    0    Tabulador al inicio
+    numero_presionado("7")    #    1    Tabulador al inicio
+def start_ocho():    #    0    Tabulador al inicio
+    numero_presionado("8")    #    1    Tabulador al inicio
+def start_nueve():    #    0    Tabulador al inicio
+    numero_presionado("9")    #    1    Tabulador al inicio
+def start_por():    #    0    Tabulador al inicio
+    global operacion, cantidad, punto    #    1    Tabulador al inicio
+    operacion = "MULTIPLICACION"    #    1    Tabulador al inicio
+    cantidad = ""    #    1    Tabulador al inicio
+    punto = False    #    1    Tabulador al inicio
+def start_cuatro():    #    0    Tabulador al inicio
+    numero_presionado("4")    #    1    Tabulador al inicio
+def start_cinco():    #    0    Tabulador al inicio
+    numero_presionado("5")    #    1    Tabulador al inicio
+def start_seis():    #    0    Tabulador al inicio
+    numero_presionado("6")    #    1    Tabulador al inicio
+# TERMINA LA PRIMERA PARTE DE TRES DEL PROGRAMA DE LA CALCULADORA CON TKINTER #    #    0    Tabulador al inicio
+# INICIA  LA SEGUNDA PARTE DE TRES DEL PROGRAMA DE LA CALCULADORA CON TKINTER #    #    0    Tabulador al inicio
+def start_menos():    #    0    Tabulador al inicio
+    global operacion, cantidad, punto    #    1    Tabulador al inicio
+    operacion = "RESTA"    #    1    Tabulador al inicio
+    cantidad = ""    #    1    Tabulador al inicio
+    punto = False    #    1    Tabulador al inicio
+def start_uno():    #    0    Tabulador al inicio
+    numero_presionado("1")    #    1    Tabulador al inicio
+def start_dos():    #    0    Tabulador al inicio
+    numero_presionado("2")    #    1    Tabulador al inicio
+def start_tres():    #    0    Tabulador al inicio
+    numero_presionado("3")    #    1    Tabulador al inicio
+def start_mas():    #    0    Tabulador al inicio
+    global operacion, cantidad, punto    #    1    Tabulador al inicio
+    operacion = "SUMA"    #    1    Tabulador al inicio
+    cantidad = ""    #    1    Tabulador al inicio
+    punto = False    #    1    Tabulador al inicio
+def start_cero():    #    0    Tabulador al inicio
+    numero_presionado("0")    #    1    Tabulador al inicio
+def start_punto():    #    0    Tabulador al inicio
+    global punto    #    1    Tabulador al inicio
+    if punto == False:    #    1    Tabulador al inicio
+        numero_presionado(".")    #    2    Tabulador al inicio
+        punto = True    #    2    Tabulador al inicio
+def start_igual():    #    0    Tabulador al inicio
+    global num1, num2, operacion, resultado, cantidad, punto    #    1    Tabulador al inicio
+    resultado = float()    #    1    Tabulador al inicio
+    resultado_cad = str()    #    1    Tabulador al inicio
+    resultado_final = str()    #    1    Tabulador al inicio
+    i = int()    #    1    Tabulador al inicio
+    largo = int()    #    1    Tabulador al inicio
+    error = bool()    #    1    Tabulador al inicio
+    resultado_final = ""    #    1    Tabulador al inicio
+    error = False    #    1    Tabulador al inicio
+    if operacion == "SUMA":    #    1    Tabulador al inicio
+        resultado = num1 + num2    #    2    Tabulador al inicio
+    elif operacion == "RESTA":    #    1    Tabulador al inicio
+        resultado = num1 - num2    #    2    Tabulador al inicio
+    elif operacion == "MULTIPLICACION":    #    1    Tabulador al inicio
+        resultado = num1 * num2    #    2    Tabulador al inicio
+    elif operacion == "DIVISION":    #    1    Tabulador al inicio
+        if num2 == 0:    #    2    Tabulador al inicio
+            error = True    #    3    Tabulador al inicio
+            resultado = 0    #    3    Tabulador al inicio
+            resultado_final = "División por 0"    #    3    Tabulador al inicio
+        else:    #    2    Tabulador al inicio
+            resultado = num1 / num2    #    3    Tabulador al inicio
+    else:    #    1    Tabulador al inicio
+        resultado= 0    #    2    Tabulador al inicio
+    num1 = resultado    #    1    Tabulador al inicio
+    num2 = 0    #    1    Tabulador al inicio
+    operacion = "NO_OPERACION"    #    1    Tabulador al inicio
+    cantidad = ""    #    1    Tabulador al inicio
+    punto = False    #    1    Tabulador al inicio
+    # Desde aquí, es el algoritmo para que cuando mucho solo escriba cuatro decimales. #    #    1    Tabulador al inicio
+    # Esto es, que si tiene muchos decimales, solo deje cuatro. #    #    1    Tabulador al inicio
+    if error == False:    #    1    Tabulador al inicio
+        resultado_cad = str(resultado)    #    2    Tabulador al inicio
+        largo = len(resultado_cad)    #    2    Tabulador al inicio
+        for i in range(largo):    #    2    Tabulador al inicio
+            if resultado_cad[i: i + 1] == ".":    #    3    Tabulador al inicio
+                if largo <= i + 4:    #    4    Tabulador al inicio
+                    resultado_final = resultado_cad    #    5    Tabulador al inicio
+                else:    #    4    Tabulador al inicio
+                    resultado_final = resultado_cad[0: i + 5]    #    5    Tabulador al inicio
+    variable_control.set(resultado_final)    #    1    Tabulador al inicio
+    # Ahora hace un sonido retardado, esto es para que produzca una sensación de que: "Esta trabajando". #    #    1    Tabulador al inicio
+    winsound.PlaySound("SystemExit", winsound.SND_ALIAS)    #    1    Tabulador al inicio
+# TERMINA def start_igual():    #    0    Tabulador al inicio
+# TERMINA  LA SEGUNDA PARTE DE TRES DEL PROGRAMA DE LA CALCULADORA CON TKINTER #    #    0    Tabulador al inicio
+#  INICIA  LA TERCERA PARTE DE TRES DEL PROGRAMA DE LA CALCULADORA CON TKINTER #    #    0    Tabulador al inicio
+root = Tk()    #    0    Tabulador al inicio
+root.title("PAGINA:  PYTHON  CODIGO  FUENTE")    #    0    Tabulador al inicio
+root.resizable(False, False)    #    0    Tabulador al inicio
+variable_control = StringVar()    #    0    Tabulador al inicio
+# AQUI EMPIEZAN LOS BOTONES Y LA PANTALLA DE TKINTER #    #    0    Tabulador al inicio
+etiqueta_pantalla = Label(textvariable= variable_control, bg = "lightgrey", fg = "seagreen", font = ("Arial", 34, "bold"), justify="right", width = 10)    #    0    Tabulador al inicio
+# etiqueta_pantalla = ttk.Entry(justify = tk.RIGHT)    #    0    Tabulador al inicio
+etiqueta_pantalla.grid(row = 0, column = 0, columnspan = 4, rowspan = 2, sticky = "nsew", padx = 12, pady = 12)    #    0    Tabulador al inicio
+# columnspan = 4    Utiliza 4 celdas horizontalmente    #    0    Tabulador al inicio
+# rowspan = 2,          Utiliza 2 celdas verticalmente    #    0    Tabulador al inicio
+boton_borrar = Button(text="BORRAR", padx=14, fg="yellow", bg="lightskyblue", font = ("Arial", 18, "bold"), border=10, command=start_borrar)    #    0    Tabulador al inicio
+boton_borrar.grid(row = 2, column = 0, columnspan = 3, sticky = "nsew", padx = 2, pady = 2)    #    0    Tabulador al inicio
+# columnspan = 3    Utiliza 3 celdas horizontalmente    #    0    Tabulador al inicio
+# row = 2,  column = 0        Fila 2, columna 0    #    0    Tabulador al inicio
+# sticky = "nsew"    Llena las celdas completamente de arriba a abajo y totalmente de izquiertda a derecha,    #    0    Tabulador al inicio
+boton_entre = Button(text="/", padx=14, fg="red", bg="lightskyblue", font = ("Arial", 20, "bold"), border=10, command=start_entre)    #    0    Tabulador al inicio
+boton_entre.grid(row = 2, column = 3, sticky = "nsew", padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_7 = Button(text="7", padx=14, fg="white", bg="lightsteelblue", font = ("Arial", 20, "bold"), border=10, command=start_siete)    #    0    Tabulador al inicio
+boton_7.grid(row = 3, column = 0, padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_8 = Button(text="8", padx=14, fg="white", bg="lightsteelblue", font = ("Arial", 20, "bold"), border=10, command=start_ocho)    #    0    Tabulador al inicio
+boton_8.grid(row = 3, column = 1, padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_9 = Button(text="9", padx=14, fg="white", bg="lightsteelblue", font = ("Arial", 20, "bold"), border=10, command=start_nueve)    #    0    Tabulador al inicio
+boton_9.grid(row = 3, column = 2, padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_por = Button(text="x", padx=14, fg="red", bg="lightskyblue", font = ("Arial", 20, "bold"), border=10, command=start_por)    #    0    Tabulador al inicio
+boton_por.grid(row = 3, column = 3, sticky = "nsew", padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_4 = Button(text="4", padx=14, fg="white", bg="lightsteelblue", font = ("Arial", 20, "bold"), border=10, command=start_cuatro)    #    0    Tabulador al inicio
+boton_4.grid(row = 4, column = 0, padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_5 = Button(text="5", padx=14, fg="white", bg="lightsteelblue", font = ("Arial", 20, "bold"), border=10, command=start_cinco)    #    0    Tabulador al inicio
+boton_5.grid(row = 4, column = 1, padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_6 = Button(text="6", padx=14, fg="white", bg="lightsteelblue", font = ("Arial", 20, "bold"), border=10, command=start_seis)    #    0    Tabulador al inicio
+boton_6.grid(row = 4, column = 2, padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_menos = Button(text="-", padx=14, fg="red", bg="lightskyblue", font = ("Arial", 20, "bold"), border=10, command=start_menos)    #    0    Tabulador al inicio
+boton_menos.grid(row = 4, column = 3, sticky = "nsew", padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_1 = Button(text="1", padx=14, fg="white", bg="lightsteelblue", font = ("Arial", 20, "bold"), border=10, command=start_uno)    #    0    Tabulador al inicio
+boton_1.grid(row = 5, column = 0, padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_2 = Button(text="2", padx=14, fg="white", bg="lightsteelblue", font = ("Arial", 20, "bold"), border=10, command=start_dos)    #    0    Tabulador al inicio
+boton_2.grid(row = 5, column = 1, padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_3 = Button(text="3", padx=14, fg="white", bg="lightsteelblue", font = ("Arial", 20, "bold"), border=10, command=start_tres)    #    0    Tabulador al inicio
+boton_3.grid(row = 5, column = 2, padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_mas = Button(text="+", padx=14, fg="red", bg="lightskyblue", font = ("Arial", 20, "bold"), border=10, command=start_mas)    #    0    Tabulador al inicio
+boton_mas.grid(row = 5, column = 3, padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_0 = Button(text="0", padx=14, fg="white", bg="lightsteelblue", font = ("Arial", 20, "bold"), border=10, command=start_cero)    #    0    Tabulador al inicio
+boton_0.grid(row = 6, column = 0, columnspan = 2, sticky = "nsew", padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_punto = Button(text=".", padx=14, fg="white", bg="lightsteelblue", font = ("Arial", 20, "bold"), border=10, command=start_punto)    #    0    Tabulador al inicio
+boton_punto.grid(row = 6, column = 2, sticky = "nsew", padx = 2, pady = 2)    #    0    Tabulador al inicio
+boton_igual = Button(text="=", padx=14, fg="red", bg="lightskyblue", font = ("Arial", 20, "bold"), border=10, command=start_igual)    #    0    Tabulador al inicio
+boton_igual.grid(row = 6, column = 3, padx = 2, pady = 2)    #    0    Tabulador al inicio
+root.mainloop()    #    0    Tabulador al inicio
+# FIN DEL ALGORITMO QUE CREA UNA CALCULADORA CON TKINTER #    #    0    Tabulador al inicio
+#  TERMINA  LA TERCERA PARTE DE TRES DEL PROGRAMA DE LA CALCULADORA CON TKINTER #    #    0    Tabulador al inicio
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="project">
+        <h2>TIC TAC TOE</h2>
+        <div class="project-details">
+            <div class="project-images">
+                <img src="TicTacToe1-python.jpg" alt="Python Project Image 4">
+                <img src="TicTacToe2-python.jpg" alt="Python Project Image 5">
+                <img src="TicTacToe3-python.jpg" alt="Python Project Image 6">
+            </div>
+            <div class="code">
+                <pre>
+                    <code>
+                        # ******************************************************
+# Python Tic Tac Toe game
+# ******************************************************
+
+from tkinter import *
+import random
+
+def next_turn(row, column):
+
+    global player
+
+    if buttons[row][column]['text'] == "" and check_winner() is False:
+
+        if player == players[0]:
+
+            buttons[row][column]['text'] = player
+
+            if check_winner() is False:
+                player = players[1]
+                label.config(text=(players[1]+" turn"))
+
+            elif check_winner() is True:
+                label.config(text=(players[0]+" wins"))
+
+            elif check_winner() == "Tie":
+                label.config(text="Tie!")
+
+        else:
+
+            buttons[row][column]['text'] = player
+
+            if check_winner() is False:
+                player = players[0]
+                label.config(text=(players[0]+" turn"))
+
+            elif check_winner() is True:
+                label.config(text=(players[1]+" wins"))
+
+            elif check_winner() == "Tie":
+                label.config(text="Tie!")
+
+def check_winner():
+
+    for row in range(3):
+        if buttons[row][0]['text'] == buttons[row][1]['text'] == buttons[row][2]['text'] != "":
+            buttons[row][0].config(bg="green")
+            buttons[row][1].config(bg="green")
+            buttons[row][2].config(bg="green")
+            return True
+
+    for column in range(3):
+        if buttons[0][column]['text'] == buttons[1][column]['text'] == buttons[2][column]['text'] != "":
+            buttons[0][column].config(bg="green")
+            buttons[1][column].config(bg="green")
+            buttons[2][column].config(bg="green")
+            return True
+
+    if buttons[0][0]['text'] == buttons[1][1]['text'] == buttons[2][2]['text'] != "":
+        buttons[0][0].config(bg="green")
+        buttons[1][1].config(bg="green")
+        buttons[2][2].config(bg="green")
+        return True
+
+    elif buttons[0][2]['text'] == buttons[1][1]['text'] == buttons[2][0]['text'] != "":
+        buttons[0][2].config(bg="green")
+        buttons[1][1].config(bg="green")
+        buttons[2][0].config(bg="green")
+        return True
+
+    elif empty_spaces() is False:
+
+        for row in range(3):
+            for column in range(3):
+                buttons[row][column].config(bg="yellow")
+        return "Tie"
+
+    else:
+        return False
+
+
+def empty_spaces():
+
+    spaces = 9
+
+    for row in range(3):
+        for column in range(3):
+            if buttons[row][column]['text'] != "":
+                spaces -= 1
+
+    if spaces == 0:
+        return False
+    else:
+        return True
+
+def new_game():
+
+    global player
+
+    player = random.choice(players)
+
+    label.config(text=player+" turn")
+
+    for row in range(3):
+        for column in range(3):
+            buttons[row][column].config(text="",bg="#F0F0F0")
+
+
+window = Tk()
+window.title("Tic-Tac-Toe")
+players = ["x","o"]
+player = random.choice(players)
+buttons = [[0,0,0],
+           [0,0,0],
+           [0,0,0]]
+
+label = Label(text=player + " turn", font=('consolas',40))
+label.pack(side="top")
+
+reset_button = Button(text="restart", font=('consolas',20), command=new_game)
+reset_button.pack(side="top")
+
+frame = Frame(window)
+frame.pack()
+
+for row in range(3):
+    for column in range(3):
+        buttons[row][column] = Button(frame, text="",font=('consolas',40), width=5, height=2,
+                                      command= lambda row=row, column=column: next_turn(row,column))
+        buttons[row][column].grid(row=row,column=column)
+
+window.mainloop()
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

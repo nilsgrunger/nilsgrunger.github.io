@@ -1,0 +1,57 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+  background-image: url('Isolated.logo.jpg'); /* Ruta a tu imagen de fondo */
+  background-size: cover; /* Para cubrir completamente el fondo */
+  background-repeat: no-repeat; /* Para evitar la repetición de la imagen de fondo */
+
+  margin: 0;
+  padding: 0;
+}
+/*.band-background {
+  background-image: url('Isolated.logo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* New styles for the header and navbar */
+.header {
+  content: 🎸🎸;
+  background-color: #000;
+  color: white;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.navbar-logo {
+  font-family: 'Lobster', cursive;
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-list a {
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Mynerve', cursive;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-list a:hover {
+  color: #bfbfbf;
+}
+
+
